@@ -1645,7 +1645,7 @@
     </p>
     <br>
     <div style="display: flex; justify-content: center;">
-      <img src="figures/Failure.png" alt="VLM Planning Comparison" style="width: 900px">
+      <img src="figures/gpt.png" alt="VLM Planning Comparison" style="width: 900px">
     </div>
     <br>
     <div style="display: flex; justify-content: center;">
@@ -1730,6 +1730,90 @@
           <img src="figures/dataset.png" alt="Dataset Visualization" style="width: 700px">
         </div>
         <br>
+      </div>
+    </div>
+    <br>
+
+    <!-- Dataset Viewer -->
+    <div>
+      <h3 class="main-title" style="font-size: 1.4rem; font-weight: 600; color: #0780cf; margin-bottom: 15px;">Dataset Viewer</h3>
+
+      <div class="category-nav">
+          <button class="category-btn active" onclick="showCategory('living-room')">Living Room</button>
+          <button class="category-btn" onclick="showCategory('bathroom')">Bathroom</button>
+          <button class="category-btn" onclick="showCategory('kitchen')">Kitchen</button>
+          <button class="category-btn" onclick="showCategory('bedroom')">Bedroom</button>
+      </div>
+  
+      <!-- Top Thumbnail Row -->
+      <div class="top-thumbnails">
+          <!-- Living Room Thumbnails -->
+          <div id="living-room-thumbnails" class="thumbnail-row">
+              <img class="top-thumbnail" src="figures/livingroom/1/1.png" alt="Living Room 1" onclick="showDetail('living-room', 'item1')">
+              <img class="top-thumbnail" src="figures/livingroom/2/1.png" alt="Living Room 2" onclick="showDetail('living-room', 'item2')">
+              <img class="top-thumbnail" src="figures/livingroom/3/1.png" alt="Living Room 3" onclick="showDetail('living-room', 'item3')">
+              <img class="top-thumbnail" src="figures/livingroom/4/1.png" alt="Living Room 4" onclick="showDetail('living-room', 'item4')">
+              <img class="top-thumbnail" src="figures/livingroom/5/1.png" alt="Living Room 5" onclick="showDetail('living-room', 'item5')">
+          </div>
+
+          <!-- Bathroom Thumbnails -->
+          <div id="bathroom-thumbnails" class="thumbnail-row" style="display: none;">
+              <img class="top-thumbnail" src="figures/bathroom/1/1.png" alt="Bathroom 1" onclick="showDetail('bathroom', 'item1')">
+              <img class="top-thumbnail" src="figures/bathroom/2/1.png" alt="Bathroom 2" onclick="showDetail('bathroom', 'item2')">
+              <img class="top-thumbnail" src="figures/bathroom/3/1.png" alt="Bathroom 3" onclick="showDetail('bathroom', 'item3')">
+              <img class="top-thumbnail" src="figures/bathroom/4/1.png" alt="Bathroom 4" onclick="showDetail('bathroom', 'item4')">
+              <img class="top-thumbnail" src="figures/bathroom/5/1.png" alt="Bathroom 5" onclick="showDetail('bathroom', 'item5')">
+          </div>
+  
+          <!-- Kitchen Thumbnails -->
+          <div id="kitchen-thumbnails" class="thumbnail-row" style="display: none;">
+              <img class="top-thumbnail" src="figures/kitchen/1/1.png" alt="Kitchen 1" onclick="showDetail('kitchen', 'item1')">
+              <img class="top-thumbnail" src="figures/kitchen/2/1.png" alt="Kitchen 2" onclick="showDetail('kitchen', 'item2')">
+              <img class="top-thumbnail" src="figures/kitchen/3/1.png" alt="Kitchen 3" onclick="showDetail('kitchen', 'item3')">
+              <img class="top-thumbnail" src="figures/kitchen/4/1.jpg" alt="Kitchen 4" onclick="showDetail('kitchen', 'item4')">
+              <img class="top-thumbnail" src="figures/kitchen/5/1.png" alt="Kitchen 5" onclick="showDetail('kitchen', 'item5')">
+          </div>
+  
+          <!-- Bedroom Thumbnails -->
+          <div id="bedroom-thumbnails" class="thumbnail-row" style="display: none;">
+              <img class="top-thumbnail" src="figures/bedroom/1/1.png" alt="Bedroom 1" onclick="showDetail('bedroom', 'item1')">
+              <img class="top-thumbnail" src="figures/bedroom/2/1.png" alt="Bedroom 2" onclick="showDetail('bedroom', 'item2')">
+              <img class="top-thumbnail" src="figures/bedroom/3/1.png" alt="Bedroom 3" onclick="showDetail('bedroom', 'item3')">
+              <img class="top-thumbnail" src="figures/bedroom/4/1.png" alt="Bedroom 4" onclick="showDetail('bedroom', 'item4')">
+              <img class="top-thumbnail" src="figures/bedroom/5/1.png" alt="Bedroom 5" onclick="showDetail('bedroom', 'item5')">
+          </div>
+      </div>
+  
+      <!-- Detail View - Always Visible -->
+      <div id="detail-view" class="detail-container">
+          <div class="detail-content">
+              <div class="left-panel">
+                  <div class="image-grid">
+                      <img class="detail-image" id="detail-image-1" src="figures/living-room/1/1.png" alt="Detail Image 1">
+                      <img class="detail-image" id="detail-image-2" src="figures/living-room/1/2.png" alt="Detail Image 2">
+                      <img class="detail-image" id="detail-image-3" src="figures/living-room/1/3.png" alt="Detail Image 3">
+                      <img class="detail-image" id="detail-image-4" src="figures/living-room/1/4.png" alt="Detail Image 4">
+                  </div>
+              </div>
+  
+              <div class="right-panel">
+                  <div class="description-section">
+                      <h3><strong>Unified Spatial-Functional Scene Graph</strong></h3>
+                      <div class="description-text" id="description-text">
+"task_instruction": "Turn on the ceiling light.",
+"nodes": ["ceiling light", "light switch"],
+"edges": [ {
+    "functional_relationship": "control",
+    "object1": "light switch", "object2": "ceiling light",
+    "spatial_relations": ["left_of", "lower_than", "in_front_of"],
+    "is_touching": false
+  }],
+"action_type": "press",
+"function_type": "device_control"
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
     </div>
     <br>
@@ -1942,6 +2026,154 @@
               });
             });
           });
+          
+          // Dataset Viewer Functions
+          let currentCategory = 'bathroom';
+          
+          // Sample data for different categories and items
+          const datasetData = {
+              'bathroom': {
+                  'item1': {
+                      images: ['figures/bathroom/1/1.png', 'figures/bathroom/1/2.png', 'figures/bathroom/1/3.png'],
+                      description: '"task_instruction": "Flush the toilet.",\n"nodes": ["handle", "toilet"],\n"edges": [{\n    "functional_relationship": "control",\n    "object1": "handle", "object2": "toilet",\n    "spatial_relations": ["left_of", "higher_than", "behind"],\n    "is_touching": true\n  }],\n"action_type": "open",\n"function_type": "special_function"'
+                  },
+                  'item2': {
+                      images: ['figures/bathroom/2/1.png', 'figures/bathroom/2/2.png', 'figures/bathroom/2/3.png', 'figures/bathroom/2/4.png'],
+                      description: '"task_instruction": "Fill the bathtub.",\n"nodes": ["bathtub", "showerhead", "faucet", "handle"],\n"edges": [{\n    "functional_relationship": "control",\n    "object1": "faucet", "object2": "bathtub",\n    "spatial_relations": ["higher_than", "right_of", "behind"],\n    "is_touching": true\n  },\n  {\n    "functional_relationship": "control",\n    "object1": "showerhead", "object2": "bathtub",\n    "spatial_relations": ["higher_than", "in_front_of"],\n    "is_touching": false\n  }],\n"action_type": "open",\n"function_type": "water_flow_control"'
+                  },
+                  'item3': {
+                      images: ['figures/bathroom/3/1.png', 'figures/bathroom/3/2.png', 'figures/bathroom/3/3.png', 'figures/bathroom/3/4.png'],
+                      description: '"task_instruction": "Open the cabinet.",\n"nodes": ["cabinet", "handle"],\n"edges": [{\n    "functional_relationship": "open or close",\n    "object1": "handle", "object2": "cabinet",\n    "spatial_relations": ["close", "in_front_of"],\n    "is_touching": true\n  },\n  {\n    "functional_relationship": "open or close",\n    "object1": "handle", "object2": "cabinet",\n    "spatial_relations": ["close", "in_front_of"],\n    "is_touching": true\n  },\n  {\n    "functional_relationship": "open or close",\n    "object1": "handle", "object2": "cabinet",\n    "spatial_relations": ["close", "in_front_of"],\n    "is_touching": true\n  }],\n"action_type": "pull",\n"function_type": "open_close_control"'
+                  },
+                  'item4': {
+                      images: ['figures/bathroom/4/1.png', 'figures/bathroom/4/2.png', 'figures/bathroom/4/3.png'],
+                      description: '"task_instruction": "Control water flow of the bathroom sink.",\n"nodes": ["faucet", "handle", "button", "knob", "bathroom sink"],\n"edges": [{\n    "functional_relationship": "control",\n    "object1": "faucet", "object2": "bathroom sink",\n    "spatial_relations": ["higher_than", "close"],\n    "is_touching": true\n  },\n  {\n    "functional_relationship": "control",\n    "object1": "button", "object2": "bathroom sink",\n    "spatial_relations": ["close", "lower_than"],\n    "is_touching": true\n  }],\n"action_type": "press",\n"function_type": "water_flow_control"'
+                  },
+                  'item5': {
+                      images: ['figures/bathroom/5/1.png', 'figures/bathroom/5/2.png', 'figures/bathroom/5/3.png'],
+                      description: '"task_instruction": "Turn on the ceiling light.",\n"nodes": ["ceiling light", "light switch"],\n"edges": [{\n    "functional_relationship": "control",\n    "object1": "light switch", "object2": "ceiling light",\n    "spatial_relations": ["right_of", "lower_than", "in_front_of"],\n    "is_touching": false\n  }],\n"action_type": "press",\n"function_type": "device_control"'
+                  }
+              },
+              'living-room': {
+                  'item1': {
+                      images: ['figures/livingroom/1/1.png', 'figures/livingroom/1/2.png', 'figures/livingroom/1/3.png', 'figures/livingroom/1/4.png'],
+                      description: '"task_instruction": "Turn on the ceiling light.",\n"nodes": ["ceiling light", "light switch"],\n"edges": [{\n    "functional_relationship": "control",\n    "object1": "light switch", "object2": "ceiling light",\n    "spatial_relations": ["left_of", "lower_than", "in_front_of"],\n    "is_touching": false\n  }],\n"action_type": "press",\n"function_type": "device_control"'
+                  },
+                  'item2': {
+                      images: ['figures/livingroom/2/1.png', 'figures/livingroom/2/2.png', 'figures/livingroom/2/3.png', 'figures/livingroom/2/4.png'],
+                      description: '"task_instruction": "Adjust the safe.",\n"nodes": ["handle", "knob", "safe"],\n"edges": [{\n    "functional_relationship": "adjust",\n    "object1": "knob", "object2": "safe",\n    "spatial_relations": ["close"],\n    "is_touching": true\n  },\n  {\n    "functional_relationship": "open or close",\n    "object1": "handle", "object2": "safe",\n    "spatial_relations": ["close", "lower_than"],\n    "is_touching": true\n  }],\n"action_type": "rotate",\n"function_type": "parameter_adjustment"'
+                  },
+                  'item3': {
+                      images: ['figures/livingroom/3/1.png', 'figures/livingroom/3/2.png', 'figures/livingroom/3/3.png', 'figures/livingroom/3/4.png'],
+                      description: '"task_instruction": "Turn on the television.",\n"nodes": ["remote control", "tv"],\n"edges": [{\n    "functional_relationship": "control",\n    "object1": "remote control", "object2": "tv",\n    "spatial_relations": ["left_of", "lower_than", "in_front_of"],\n    "is_touching": false\n  }],\n"action_type": "press",\n"function_type": "device_control"'
+                  },
+                  'item4': {
+                      images: ['figures/livingroom/4/1.png', 'figures/livingroom/4/2.png', 'figures/livingroom/4/3.png', 'figures/livingroom/4/4.png'],
+                      description: '"task_instruction": "Open the window.",\n"nodes": ["window", "handle"],\n"edges": [{\n    "functional_relationship": "open or close",\n    "object1": "handle", "object2": "window",\n    "spatial_relations": ["close", "in_front_of"],\n    "is_touching": true\n  },\n  {\n    "functional_relationship": "open or close",\n    "object1": "handle", "object2": "window",\n    "spatial_relations": ["close", "in_front_of"],\n    "is_touching": true\n  }],\n"action_type": "rotate",\n"function_type": "open_close_control"'
+                  },
+                  'item5': {
+                      images: ['figures/livingroom/5/1.png', 'figures/livingroom/5/2.png', 'figures/livingroom/5/3.png', 'figures/livingroom/5/4.png'],
+                      description: '"task_instruction": "Open the door.",\n"nodes": ["door", "handle"],\n"edges": [{\n    "functional_relationship": "open or close",\n    "object1": "handle", "object2": "door",\n    "spatial_relations": ["right_of", "lower_than", "in_front_of"],\n    "is_touching": true\n  }],\n"action_type": "pull",\n"function_type": "open_close_control"'
+                  }
+              },
+              'kitchen': {
+                  'item1': {
+                      images: ['figures/kitchen/1/1.png', 'figures/kitchen/1/2.png', 'figures/kitchen/1/3.png', 'figures/kitchen/1/4.png'],
+                      description: '"task_instruction": "Turn on the stove burners.",\n"nodes": ["stove knob", "stove burner"],\n"edges": [{\n    "functional_relationship": "adjust",\n    "object1": "stove knob", "object2": "stove burner",\n    "spatial_relations": ["in_front_of", "close"],\n    "is_touching": false\n  },\n  {\n    "functional_relationship": "adjust",\n    "object1": "stove knob", "object2": "stove burner",\n    "spatial_relations": ["in_front_of", "close"],\n    "is_touching": false\n  },\n  {\n    "functional_relationship": "adjust",\n    "object1": "stove knob", "object2": "stove burner",\n    "spatial_relations": ["in_front_of", "close"],\n    "is_touching": false\n  },\n  {\n    "functional_relationship": "adjust",\n    "object1": "stove knob", "object2": "stove burner",\n    "spatial_relations": ["in_front_of", "close"],\n    "is_touching": false\n  }],\n"action_type": "rotate",\n"function_type": "device_control"'
+                  },
+                  'item2': {
+                      images: ['figures/kitchen/2/1.png', 'figures/kitchen/2/2.png', 'figures/kitchen/2/3.png', 'figures/kitchen/2/4.png'],
+                      description: '"task_instruction": "Control water flow of the kitchen sink.",\n"nodes": ["faucet / handle", "kitchen sink"],\n"edges": [{\n    "functional_relationship": "control",\n    "object1": "faucet / handle", "object2": "kitchen sink",\n    "spatial_relations": ["higher_than", "behind", "close"],\n    "is_touching": true\n  }],\n"action_type": "open",\n"function_type": "water_flow_control"'
+                  },
+                  'item3': {
+                      images: ['figures/kitchen/3/1.png', 'figures/kitchen/3/2.png', 'figures/kitchen/3/3.png', 'figures/kitchen/3/4.png'],
+                      description: '"task_instruction": "Turn on the stove burners.",\n"nodes": ["stove knob", "stove burner"],\n"edges": [{\n    "functional_relationship": "adjust",\n    "object1": "stove knob", "object2": "stove burner",\n    "spatial_relations": ["in_front_of", "close"],\n    "is_touching": false\n  },\n  {\n    "functional_relationship": "adjust",\n    "object1": "stove knob", "object2": "stove burner",\n    "spatial_relations": ["in_front_of", "close"],\n    "is_touching": false\n  },\n  {\n    "functional_relationship": "adjust",\n    "object1": "stove knob", "object2": "stove burner",\n    "spatial_relations": ["in_front_of", "close"],\n    "is_touching": false\n  },\n  {\n    "functional_relationship": "adjust",\n    "object1": "stove knob", "object2": "stove burner",\n    "spatial_relations": ["in_front_of", "close"],\n    "is_touching": false\n  }],\n"action_type": "rotate",\n"function_type": "device_control"'
+                  },
+                  'item4': {
+                      images: ['figures/kitchen/4/1.jpg', 'figures/kitchen/4/2.jpg', 'figures/kitchen/4/3.jpg', 'figures/kitchen/4/4.jpg'],
+                      description: '"task_instruction": "Control water flow of the kitchen sink.",\n"nodes": ["faucet / handle", "kitchen sink"],\n"edges": [{\n    "functional_relationship": "control",\n    "object1": "faucet / handle", "object2": "kitchen sink",\n    "spatial_relations": ["higher_than", "in_front_of", "close"],\n    "is_touching": true\n  }],\n"action_type": "open",\n"function_type": "water_flow_control"'
+                  },
+                  'item5': {
+                      images: ['figures/kitchen/5/1.png', 'figures/kitchen/5/2.png', 'figures/kitchen/5/3.png', 'figures/kitchen/5/4.png'],
+                      description: '"task_instruction": "Open the fridge.",\n"nodes": ["handle", "fridge"],\n"edges": [{\n    "functional_relationship": "open or close",\n    "object1": "handle", "object2": "fridge",\n    "spatial_relations": ["close", "in_front_of"],\n    "is_touching": true\n  },\n  {\n    "functional_relationship": "open or close",\n    "object1": "handle", "object2": "fridge",\n    "spatial_relations": ["close", "in_front_of"],\n    "is_touching": true\n  }],\n"action_type": "pull",\n"function_type": "open_close_control"'
+                  }
+              },
+              'bedroom': {
+                  'item1': {
+                      images: ['figures/bedroom/1/1.png', 'figures/bedroom/1/2.png', 'figures/bedroom/1/3.png', 'figures/bedroom/1/4.png'],
+                      description: '"task_instruction": "Open the cabinet.",\n"nodes": ["cabinet", "handle"],\n"edges": [{\n    "functional_relationship": "open or close",\n    "object1": "handle", "object2": "cabinet",\n    "spatial_relations": ["close", "in_front_of", "lower_than"],\n    "is_touching": true\n  }],\n"action_type": "pull",\n"function_type": "open_close_control"'
+                  },
+                  'item2': {
+                      images: ['figures/bedroom/2/1.png', 'figures/bedroom/2/2.png', 'figures/bedroom/2/3.png'],
+                      description: '"task_instruction": "Turn on the TV.",\n"nodes": ["remote control", "tv"],\n"edges": [{\n    "functional_relationship": "control",\n    "object1": "remote control", "object2": "tv",\n    "spatial_relations": ["close"],\n    "is_touching": false\n  }],\n"action_type": "press",\n"function_type": "device_control"'
+                  },
+                  'item3': {
+                      images: ['figures/bedroom/3/1.png', 'figures/bedroom/3/2.png', 'figures/bedroom/3/3.png', 'figures/bedroom/3/4.png'],
+                      description: '"task_instruction": "Turn on the ceiling light.",\n"nodes": ["light switch", "ceiling light"],\n"edges": [{\n    "functional_relationship": "control",\n    "object1": "light switch", "object2": "ceiling light",\n    "spatial_relations": ["in_front_of", "lower_than", "right_of"],\n    "is_touching": false\n  }],\n"action_type": "press",\n"function_type": "device_control"'
+                  },
+                  'item4': {
+                      images: ['figures/bedroom/4/1.png', 'figures/bedroom/4/2.png', 'figures/bedroom/4/3.png', 'figures/bedroom/4/4.png'],
+                      description: '"task_instruction": "Open the dresser.",\n"nodes": ["dresser", "handle", "handle"],\n"edges": [{\n    "functional_relationship": "open or close",\n    "object1": "handle", "object2": "dresser",\n    "spatial_relations": ["in_front_of", "close", "right_of"],\n    "is_touching": true\n  },\n  {\n    "functional_relationship": "open or close",\n    "object1": "handle", "object2": "dresser",\n    "spatial_relations": ["lower_than", "in_front_of", "close"],\n    "is_touching": true\n  }],\n"action_type": "pull",\n"function_type": "open_close_control"'
+                  },
+                  'item5': {
+                      images: ['figures/bedroom/5/1.png', 'figures/bedroom/5/2.png', 'figures/bedroom/5/3.png', 'figures/bedroom/5/4.png'],
+                      description: '"task_instruction": "Open the door.",\n"nodes": ["handle", "door"],\n"edges": [{\n    "functional_relationship": "open or close",\n    "object1": "handle", "object2": "door",\n    "spatial_relations": ["left_of", "in_front_of", "close"],\n    "is_touching": true\n  }],\n"action_type": "pull",\n"function_type": "open_close_control"'
+                  }
+              }
+          };
+          
+          function showCategory(category) {
+              currentCategory = category;
+              
+              // Update active button
+              const buttons = document.querySelectorAll('.category-btn');
+              buttons.forEach(btn => {
+                  btn.classList.remove('active');
+              });
+              event.target.classList.add('active');
+              
+              // Show/hide thumbnail rows
+              const thumbnailRows = document.querySelectorAll('.thumbnail-row');
+              thumbnailRows.forEach(row => {
+                  row.style.display = 'none';
+              });
+              document.getElementById(category + '-thumbnails').style.display = 'flex';
+              
+              // Update detail view with first item
+              showDetail(category, 'item1');
+          }
+          
+          function showDetail(category, item) {
+              const data = datasetData[category][item];
+              if (!data) return;
+              
+              // Update images
+              for (let i = 1; i <= 4; i++) {
+                  const img = document.getElementById('detail-image-' + i);
+                  if (img) {
+                      if (data.images[i-1]) {
+                          img.src = data.images[i-1];
+                          img.style.display = 'block';
+                      } else {
+                          // Hide the image if no data available
+                          img.style.display = 'none';
+                      }
+                  }
+              }
+              
+              // Update description
+              const descriptionText = document.getElementById('description-text');
+              if (descriptionText) {
+                  descriptionText.innerHTML = data.description.replace(/\n/g, '<br>');
+              }
+          }
+          
+          // Auto-load bathroom data on page load
+          document.addEventListener('DOMContentLoaded', function() {
+              console.log('Page loaded, setting up bathroom data');
+              showDetail('living-room', 'item1');
+          });
+          
         </script>
         <br>
       </div>
