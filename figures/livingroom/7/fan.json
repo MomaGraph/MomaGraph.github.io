@@ -1,0 +1,37 @@
+{
+  "subgraph_id": "8ffa87ca-fdb6-43c4-b760-6f300bf35993",
+  "scene_id": "421015",
+  "action_type": "insert",
+  "function_type": "power_supply",
+  "task_instruction": "Power on the fan.",
+  "nodes": [
+    {
+      "label": "electric outlet",
+      "id": "7b9857f5-d950-41b6-ac45-b68d5970f199"
+    },
+    {
+      "label": "fan",
+      "id": "2bb308a0-0a81-4e4f-b1bf-a16a0709cf16"
+    }
+  ],
+  "edges": [
+    {
+      "relation_id": "8c02bd3e-92df-4f0b-a903-74b031c2b240",
+      "scene_id": "421015",
+      "functional_relationship": "provide power",
+      "object1": {
+        "label": "electric outlet",
+        "id": "7b9857f5-d950-41b6-ac45-b68d5970f199"
+      },
+      "object2": {
+        "label": "fan",
+        "id": "2bb308a0-0a81-4e4f-b1bf-a16a0709cf16"
+      },
+      "spatial_relations": [
+        "lower_than",
+        "left_of"
+      ],
+      "is_touching": false
+    }
+  ]
+}

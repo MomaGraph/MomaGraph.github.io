@@ -1,0 +1,37 @@
+{
+  "subgraph_id": "61edcc92-b64a-441c-a8a5-fddd80132175",
+  "scene_id": "420693",
+  "task_instruction": "Open the microwave oven.",
+  "nodes": [
+    {
+      "label": "handle",
+      "id": "3fa4de28-ca13-46bb-8489-fd5e7b914166"
+    },
+    {
+      "label": "microwave oven",
+      "id": "53b18e27-afa5-4935-9ffc-3f942a3f248a"
+    }
+  ],
+  "edges": [
+    {
+      "relation_id": "7c66a2dd-536d-46fc-b23e-fcb4677ac03e",
+      "scene_id": "420693",
+      "functional_relationship": "open or close",
+      "object1": {
+        "label": "handle",
+        "id": "3fa4de28-ca13-46bb-8489-fd5e7b914166"
+      },
+      "object2": {
+        "label": "microwave oven",
+        "id": "53b18e27-afa5-4935-9ffc-3f942a3f248a"
+      },
+      "spatial_relations": [
+        "in_front_of",
+        "close"
+      ],
+      "is_touching": true
+    }
+  ],
+  "action_type": "pull",
+  "function_type": "open_close_control"
+}

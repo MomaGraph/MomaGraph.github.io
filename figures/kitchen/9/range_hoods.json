@@ -1,0 +1,125 @@
+{
+  "subgraph_id": "c33dff84-dae8-490a-9847-2bda060dcc1c",
+  "scene_id": "421069",
+  "action_type": "rotate",
+  "function_type": "open_close_control",
+  "task_instruction": "Adjust the exhaust hood.",
+  "nodes": [
+    {
+      "label": "knob",
+      "id": "944fad58-e9a0-46db-ad23-4753c7bc1a6d"
+    },
+    {
+      "label": "exhaust hood",
+      "id": "a84de5d9-25b2-49ad-b40a-662943aa6334"
+    },
+    {
+      "label": "knob",
+      "id": "c8b99a52-3c5f-4065-ab63-03e8af720a0e"
+    },
+    {
+      "label": "knob",
+      "id": "d2b1f601-c4f5-47c5-a2c2-dbde58fd3c7c"
+    },
+    {
+      "label": "knob",
+      "id": "97097bcf-8c5f-45d8-a696-96697b308f72"
+    },
+    {
+      "label": "knob",
+      "id": "062cfd8f-3137-431e-b4b4-6a9724675679"
+    }
+  ],
+  "edges": [
+    {
+      "relation_id": "6444947b-f20c-4e10-94da-3423d0293adc",
+      "scene_id": "421069",
+      "functional_relationship": "adjust",
+      "object1": {
+        "label": "knob",
+        "id": "944fad58-e9a0-46db-ad23-4753c7bc1a6d"
+      },
+      "object2": {
+        "label": "exhaust hood",
+        "id": "a84de5d9-25b2-49ad-b40a-662943aa6334"
+      },
+      "spatial_relations": [
+        "in_front_of",
+        "close"
+      ],
+      "is_touching": true
+    },
+    {
+      "relation_id": "509e68af-c79f-46c6-a1d3-bc62a09fab96",
+      "scene_id": "421069",
+      "functional_relationship": "adjust",
+      "object1": {
+        "label": "knob",
+        "id": "c8b99a52-3c5f-4065-ab63-03e8af720a0e"
+      },
+      "object2": {
+        "label": "exhaust hood",
+        "id": "a84de5d9-25b2-49ad-b40a-662943aa6334"
+      },
+      "spatial_relations": [
+        "in_front_of",
+        "close"
+      ],
+      "is_touching": true
+    },
+    {
+      "relation_id": "77e45bad-aff4-401f-beb5-8b6e78be5abd",
+      "scene_id": "421069",
+      "functional_relationship": "adjust",
+      "object1": {
+        "label": "knob",
+        "id": "d2b1f601-c4f5-47c5-a2c2-dbde58fd3c7c"
+      },
+      "object2": {
+        "label": "exhaust hood",
+        "id": "a84de5d9-25b2-49ad-b40a-662943aa6334"
+      },
+      "spatial_relations": [
+        "in_front_of",
+        "close"
+      ],
+      "is_touching": true
+    },
+    {
+      "relation_id": "4f25e561-092f-46af-8844-f44a381d8344",
+      "scene_id": "421069",
+      "functional_relationship": "adjust",
+      "object1": {
+        "label": "knob",
+        "id": "97097bcf-8c5f-45d8-a696-96697b308f72"
+      },
+      "object2": {
+        "label": "exhaust hood",
+        "id": "a84de5d9-25b2-49ad-b40a-662943aa6334"
+      },
+      "spatial_relations": [
+        "in_front_of",
+        "close"
+      ],
+      "is_touching": true
+    },
+    {
+      "relation_id": "ebf77b2b-320c-45ee-a753-874819d3ab60",
+      "scene_id": "421069",
+      "functional_relationship": "adjust",
+      "object1": {
+        "label": "knob",
+        "id": "062cfd8f-3137-431e-b4b4-6a9724675679"
+      },
+      "object2": {
+        "label": "exhaust hood",
+        "id": "a84de5d9-25b2-49ad-b40a-662943aa6334"
+      },
+      "spatial_relations": [
+        "in_front_of",
+        "close"
+      ],
+      "is_touching": true
+    }
+  ]
+}

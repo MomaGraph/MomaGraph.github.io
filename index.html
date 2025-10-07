@@ -1744,11 +1744,20 @@
           <button class="category-btn" onclick="showCategory('kitchen')">Kitchen</button>
           <button class="category-btn" onclick="showCategory('bedroom')">Bedroom</button>
       </div>
+      
+      <p style="text-align: center; color: #666; font-size: 0.9em; margin: 15px 0; font-style: italic;">
+          💡 Click on any thumbnail to view detailed scene information
+      </p>
   
       <!-- Top Thumbnail Row -->
       <div class="top-thumbnails">
           <!-- Living Room Thumbnails -->
           <div id="living-room-thumbnails" class="thumbnail-row">
+              <img class="top-thumbnail" src="figures/livingroom/6/rgb/42444875_99389.257.jpg" alt="Living Room 6" onclick="showDetail('living-room', 'item6')">
+              <img class="top-thumbnail" src="figures/livingroom/7/rgb/42444787_50406.217.jpg" alt="Living Room 7" onclick="showDetail('living-room', 'item7')">
+              <img class="top-thumbnail" src="figures/livingroom/8/rgb/42446579_205768.266.jpg" alt="Living Room 8" onclick="showDetail('living-room', 'item8')">
+              <img class="top-thumbnail" src="figures/livingroom/9/rgb/42446159_142134.337.jpg" alt="Living Room 9" onclick="showDetail('living-room', 'item9')">
+              <img class="top-thumbnail" src="figures/livingroom/10/rgb/42445169_7835.542.jpg" alt="Living Room 10" onclick="showDetail('living-room', 'item10')">
               <img class="top-thumbnail" src="figures/livingroom/1/1.png" alt="Living Room 1" onclick="showDetail('living-room', 'item1')">
               <img class="top-thumbnail" src="figures/livingroom/2/1.png" alt="Living Room 2" onclick="showDetail('living-room', 'item2')">
               <img class="top-thumbnail" src="figures/livingroom/3/1.png" alt="Living Room 3" onclick="showDetail('living-room', 'item3')">
@@ -1758,6 +1767,11 @@
 
           <!-- Bathroom Thumbnails -->
           <div id="bathroom-thumbnails" class="thumbnail-row" style="display: none;">
+              <img class="top-thumbnail" src="figures/bathroom/6/rgb/42897743_116116.683.jpg" alt="Bathroom 6" onclick="showDetail('bathroom', 'item6')">
+              <img class="top-thumbnail" src="figures/bathroom/7/rgb/42446031_135380.578.jpg" alt="Bathroom 7" onclick="showDetail('bathroom', 'item7')">
+              <img class="top-thumbnail" src="figures/bathroom/8/rgb/42444514_3777.349.jpg" alt="Bathroom 8" onclick="showDetail('bathroom', 'item8')">
+              <img class="top-thumbnail" src="figures/bathroom/9/rgb/42445451_149602.933.jpg" alt="Bathroom 9" onclick="showDetail('bathroom', 'item9')">
+              <img class="top-thumbnail" src="figures/bathroom/10/rgb/42445502_154830.278.jpg" alt="Bathroom 10" onclick="showDetail('bathroom', 'item10')">
               <img class="top-thumbnail" src="figures/bathroom/1/1.png" alt="Bathroom 1" onclick="showDetail('bathroom', 'item1')">
               <img class="top-thumbnail" src="figures/bathroom/2/1.png" alt="Bathroom 2" onclick="showDetail('bathroom', 'item2')">
               <img class="top-thumbnail" src="figures/bathroom/3/1.png" alt="Bathroom 3" onclick="showDetail('bathroom', 'item3')">
@@ -1767,6 +1781,11 @@
   
           <!-- Kitchen Thumbnails -->
           <div id="kitchen-thumbnails" class="thumbnail-row" style="display: none;">
+              <img class="top-thumbnail" src="figures/kitchen/6/rgb/42445931_79355.389.jpg" alt="Kitchen 6" onclick="showDetail('kitchen', 'item6')">
+              <img class="top-thumbnail" src="figures/kitchen/7/rgb/42444490_1270.471.jpg" alt="Kitchen 7" onclick="showDetail('kitchen', 'item7')">
+              <img class="top-thumbnail" src="figures/kitchen/8/rgb/42445169_7880.341.jpg" alt="Kitchen 8" onclick="showDetail('kitchen', 'item8')">
+              <img class="top-thumbnail" src="figures/kitchen/9/rgb/42444490_1282.882.jpg" alt="Kitchen 9" onclick="showDetail('kitchen', 'item9')">
+              <img class="top-thumbnail" src="figures/kitchen/10/rgb/42445168_8029.148.jpg" alt="Kitchen 10" onclick="showDetail('kitchen', 'item10')">
               <img class="top-thumbnail" src="figures/kitchen/1/1.png" alt="Kitchen 1" onclick="showDetail('kitchen', 'item1')">
               <img class="top-thumbnail" src="figures/kitchen/2/1.png" alt="Kitchen 2" onclick="showDetail('kitchen', 'item2')">
               <img class="top-thumbnail" src="figures/kitchen/3/1.png" alt="Kitchen 3" onclick="showDetail('kitchen', 'item3')">
@@ -1776,6 +1795,11 @@
   
           <!-- Bedroom Thumbnails -->
           <div id="bedroom-thumbnails" class="thumbnail-row" style="display: none;">
+              <img class="top-thumbnail" src="figures/bedroom/6/rgb/42897547_473168.707.jpg" alt="Bedroom 6" onclick="showDetail('bedroom', 'item6')">
+              <img class="top-thumbnail" src="figures/bedroom/7/rgb/42445938_79464.378.jpg" alt="Bedroom 7" onclick="showDetail('bedroom', 'item7')">
+              <img class="top-thumbnail" src="figures/bedroom/8/rgb/42447320_410302.225.jpg" alt="Bedroom 8" onclick="showDetail('bedroom', 'item8')">
+              <img class="top-thumbnail" src="figures/bedroom/9/rgb/42444787_50429.324.jpg" alt="Bedroom 9" onclick="showDetail('bedroom', 'item9')">
+              <img class="top-thumbnail" src="figures/bedroom/10/rgb/42446579_205785.459.jpg" alt="Bedroom 10" onclick="showDetail('bedroom', 'item10')">
               <img class="top-thumbnail" src="figures/bedroom/1/1.png" alt="Bedroom 1" onclick="showDetail('bedroom', 'item1')">
               <img class="top-thumbnail" src="figures/bedroom/2/1.png" alt="Bedroom 2" onclick="showDetail('bedroom', 'item2')">
               <img class="top-thumbnail" src="figures/bedroom/3/1.png" alt="Bedroom 3" onclick="showDetail('bedroom', 'item3')">
@@ -2052,6 +2076,26 @@
                   'item5': {
                       images: ['figures/bathroom/5/1.png', 'figures/bathroom/5/2.png', 'figures/bathroom/5/3.png'],
                       description: '"task_instruction": "Turn on the ceiling light.",\n"nodes": ["ceiling light", "light switch"],\n"edges": [{\n    "functional_relationship": "control",\n    "object1": "light switch", "object2": "ceiling light",\n    "spatial_relations": ["left_of", "lower_than"],\n    "is_touching": false\n  }],\n"action_type": "press",\n"function_type": "device_control"'
+                  },
+                  'item6': {
+                      images: ['figures/bathroom/6/rgb/42897743_116116.683.jpg', 'figures/bathroom/6/rgb/42897743_116117.083.jpg', 'figures/bathroom/6/rgb/42897743_116118.282.jpg', 'figures/bathroom/6/rgb/42897743_116119.382.jpg'],
+                      description: '"task_instruction": "Fill the bathtub.",\n"nodes": ["bathtub", "faucet / handle", "button"],\n"edges": [{\n    "functional_relationship": "control",\n    "object1": "faucet / handle", "object2": "bathtub",\n    "spatial_relations": ["higher_than", "left_of"],\n    "is_touching": true\n  },\n  {\n    "functional_relationship": "control",\n    "object1": "button", "object2": "bathtub",\n    "spatial_relations": ["lower_than", "left_of"],\n    "is_touching": true\n  }],\n"action_type": "open",\n"function_type": "water_flow_control"'
+                  },
+                  'item7': {
+                      images: ['figures/bathroom/7/rgb/42446031_135380.578.jpg', 'figures/bathroom/7/rgb/42446031_135380.878.jpg', 'figures/bathroom/7/rgb/42446031_135381.078.jpg', 'figures/bathroom/7/rgb/42446031_135400.170.jpg'],
+                      description: '"task_instruction": "Fill the bathtub.",\n"nodes": ["bathtub", "faucet / handle", "button"],\n"edges": [{\n    "functional_relationship": "control",\n    "object1": "faucet / handle", "object2": "bathtub",\n    "spatial_relations": ["higher_than", "right_of"],\n    "is_touching": true\n  },\n  {\n    "functional_relationship": "control",\n    "object1": "button", "object2": "bathtub",\n    "spatial_relations": ["lower_than", "right_of"],\n    "is_touching": true\n  }],\n"action_type": "open",\n"function_type": "water_flow_control"'
+                  },
+                  'item8': {
+                      images: ['figures/bathroom/8/rgb/42444514_3777.349.jpg', 'figures/bathroom/8/rgb/42444514_3777.549.jpg', 'figures/bathroom/8/rgb/42444514_3777.849.jpg', 'figures/bathroom/8/rgb/42444514_3778.249.jpg'],
+                      description: '"task_instruction": "Power on the dryer.",\n"nodes": ["electric outlet", "dryer"],\n"edges": [{\n    "functional_relationship": "provide power",\n    "object1": "electric outlet", "object2": "dryer",\n    "spatial_relations": ["lower_than", "left_of"],\n    "is_touching": false\n  }],\n"action_type": "insert",\n"function_type": "power_supply"'
+                  },
+                  'item9': {
+                      images: ['figures/bathroom/9/rgb/42445451_149602.933.jpg', 'figures/bathroom/9/rgb/42445451_149603.033.jpg', 'figures/bathroom/9/rgb/42445451_149603.133.jpg', 'figures/bathroom/9/rgb/42445451_149603.233.jpg'],
+                      description: '"task_instruction": "Control water flow of the bathroom sink.",\n"nodes": ["faucet / handle", "button / knob", "bathroom sink"],\n"edges": [{\n    "functional_relationship": "control",\n    "object1": "faucet / handle", "object2": "bathroom sink",\n    "spatial_relations": ["higher_than", "close"],\n    "is_touching": true\n  },\n  {\n    "functional_relationship": "control",\n    "object1": "button / knob", "object2": "bathroom sink",\n    "spatial_relations": ["lower_than", "close"],\n    "is_touching": true\n  }],\n"action_type": "open",\n"function_type": "water_flow_control"'
+                  },
+                  'item10': {
+                      images: ['figures/bathroom/10/rgb/42445502_154830.278.jpg', 'figures/bathroom/10/rgb/42445502_154830.978.jpg', 'figures/bathroom/10/rgb/42445502_154831.478.jpg', 'figures/bathroom/10/rgb/42445502_154831.877.jpg'],
+                      description: '"task_instruction": "Open the trashcan.",\n"nodes": ["handle", "trashcan"],\n"edges": [{\n    "functional_relationship": "open or close",\n    "object1": "handle", "object2": "trashcan",\n    "spatial_relations": ["lower_than", "in_front_of", "close"],\n    "is_touching": true\n  }],\n"action_type": "press",\n"function_type": "open_close_control"'
                   }
               },
               'living-room': {
@@ -2074,6 +2118,26 @@
                   'item5': {
                       images: ['figures/livingroom/5/1.png', 'figures/livingroom/5/2.png', 'figures/livingroom/5/3.png', 'figures/livingroom/5/4.png'],
                       description: '"task_instruction": "Open the door.",\n"nodes": ["door", "handle"],\n"edges": [{\n    "functional_relationship": "open or close",\n    "object1": "handle", "object2": "door",\n    "spatial_relations": ["right_of", "lower_than", "in_front_of"],\n    "is_touching": true\n  }],\n"action_type": "pull",\n"function_type": "open_close_control"'
+                  },
+                  'item6': {
+                      images: ['figures/livingroom/6/rgb/42444875_99389.257.jpg', 'figures/livingroom/6/rgb/42444875_99389.957.jpg', 'figures/livingroom/6/rgb/42444875_99390.157.jpg', 'figures/livingroom/6/rgb/42444875_99390.457.jpg'],
+                      description: '"task_instruction": "Power on the christmas tree lights.",\n"nodes": ["outlet", "christmas tree lights"],\n"edges": [{\n    "functional_relationship": "provide power",\n    "object1": "outlet", "object2": "christmas tree lights",\n    "spatial_relations": ["lower_than", "right_of"],\n    "is_touching": false\n  }],\n"action_type": "insert",\n"function_type": "power_supply"'
+                  },
+                  'item7': {
+                      images: ['figures/livingroom/7/rgb/42444787_50406.217.jpg', 'figures/livingroom/7/rgb/42444787_50408.416.jpg', 'figures/livingroom/7/rgb/42444787_50414.513.jpg', 'figures/livingroom/7/rgb/42444787_50415.613.jpg'],
+                      description: '"task_instruction": "Power on the fan.",\n"nodes": ["electric outlet", "fan"],\n"edges": [{\n    "functional_relationship": "provide power",\n    "object1": "electric outlet", "object2": "fan",\n    "spatial_relations": ["lower_than", "right_of"],\n    "is_touching": false\n  }],\n"action_type": "insert",\n"function_type": "power_supply"'
+                  },
+                  'item8': {
+                      images: ['figures/livingroom/8/rgb/42446579_205768.266.jpg', 'figures/livingroom/8/rgb/42446579_205768.366.jpg', 'figures/livingroom/8/rgb/42446579_205768.466.jpg', 'figures/livingroom/8/rgb/42446579_205768.566.jpg'],
+                      description: '"task_instruction": "Turn on the television.",\n"nodes": ["remote control", "tv"],\n"edges": [{\n    "functional_relationship": "control",\n    "object1": "remote control", "object2": "tv",\n    "spatial_relations": ["lower_than", "in_front_of", "left_of"],\n    "is_touching": false\n  }],\n"action_type": "press",\n"function_type": "device_control"'
+                  },
+                  'item9': {
+                      images: ['figures/livingroom/9/rgb/42446159_142134.337.jpg', 'figures/livingroom/9/rgb/42446159_142161.442.jpg', 'figures/livingroom/9/rgb/42446159_142167.940.jpg', 'figures/livingroom/9/rgb/42446159_142168.739.jpg'],
+                      description: '"task_instruction": "Power on the tv.",\n"nodes": ["electric outlet", "tv"],\n"edges": [{\n    "functional_relationship": "provide power",\n    "object1": "electric outlet", "object2": "tv",\n    "spatial_relations": ["higher_than", "right_of", "behind", "close"],\n    "is_touching": false\n  }],\n"action_type": "insert",\n"function_type": "power_supply"'
+                  },
+                  'item10': {
+                      images: ['figures/livingroom/10/rgb/42445169_7835.542.jpg', 'figures/livingroom/10/rgb/42445169_7835.742.jpg', 'figures/livingroom/10/rgb/42445169_7836.042.jpg', 'figures/livingroom/10/rgb/42445169_7836.342.jpg'],
+                      description: '"task_instruction": "Open the tv stand\'s drawer.",\n"nodes": ["tv stand", "handle"],\n"edges": [{\n    "functional_relationship": "open or close",\n    "object1": "handle", "object2": "tv stand",\n    "spatial_relations": ["close", "in_front_of"],\n    "is_touching": true\n  }],\n"action_type": "pull",\n"function_type": "open_close_control"'
                   }
               },
               'kitchen': {
@@ -2096,6 +2160,26 @@
                   'item5': {
                       images: ['figures/kitchen/5/1.png', 'figures/kitchen/5/2.png', 'figures/kitchen/5/3.png', 'figures/kitchen/5/4.png'],
                       description: '"task_instruction": "Open the fridge.",\n"nodes": ["handle", "fridge"],\n"edges": [{\n    "functional_relationship": "open or close",\n    "object1": "handle", "object2": "fridge",\n    "spatial_relations": ["close", "in_front_of"],\n    "is_touching": true\n  },\n  {\n    "functional_relationship": "open or close",\n    "object1": "handle", "object2": "fridge",\n    "spatial_relations": ["close", "in_front_of"],\n    "is_touching": true\n  }],\n"action_type": "pull",\n"function_type": "open_close_control"'
+                  },
+                  'item6': {
+                      images: ['figures/kitchen/6/rgb/42445931_79355.389.jpg', 'figures/kitchen/6/rgb/42445931_79355.789.jpg', 'figures/kitchen/6/rgb/42445931_79355.989.jpg', 'figures/kitchen/6/rgb/42445931_79356.289.jpg'],
+                      description: '"task_instruction": "Power on the coffee machine.",\n"nodes": ["electric outlet", "coffee machine"],\n"edges": [{\n    "functional_relationship": "provide power",\n    "object1": "electric outlet", "object2": "coffee machine",\n    "spatial_relations": ["lower_than", "left_of"],\n    "is_touching": false\n  }],\n"action_type": "insert",\n"function_type": "power_supply"'
+                  },
+                  'item7': {
+                      images: ['figures/kitchen/7/rgb/42444490_1270.471.jpg', 'figures/kitchen/7/rgb/42444490_1270.671.jpg', 'figures/kitchen/7/rgb/42444490_1270.971.jpg', 'figures/kitchen/7/rgb/42444490_1271.270.jpg'],
+                      description: '"task_instruction": "Control water flow of the kitchen sink.",\n"nodes": ["faucet / handle", "button / knob", "kitchen sink"],\n"edges": [{\n    "functional_relationship": "control",\n    "object1": "faucet / handle", "object2": "kitchen sink",\n    "spatial_relations": ["higher_than", "close"],\n    "is_touching": true\n  },\n  {\n    "functional_relationship": "control",\n    "object1": "button / knob", "object2": "kitchen sink",\n    "spatial_relations": ["close"],\n    "is_touching": true\n  }],\n"action_type": "open",\n"function_type": "water_flow_control"'
+                  },
+                  'item8': {
+                      images: ['figures/kitchen/8/rgb/42445169_7880.341.jpg', 'figures/kitchen/8/rgb/42445169_7880.841.jpg', 'figures/kitchen/8/rgb/42445169_7881.341.jpg', 'figures/kitchen/8/rgb/42445169_7881.841.jpg'],
+                      description: '"task_instruction": "Power on the kettle.",\n"nodes": ["electric outlet", "kettle"],\n"edges": [{\n    "functional_relationship": "provide power",\n    "object1": "electric outlet", "object2": "kettle",\n    "spatial_relations": ["lower_than", "left_of"],\n    "is_touching": false\n  }],\n"action_type": "insert",\n"function_type": "power_supply"'
+                  },
+                  'item9': {
+                      images: ['figures/kitchen/9/rgb/42444490_1282.882.jpg', 'figures/kitchen/9/rgb/42444490_1283.182.jpg', 'figures/kitchen/9/rgb/42444490_1283.482.jpg', 'figures/kitchen/9/rgb/42444490_1283.782.jpg'],
+                      description: '"task_instruction": "Adjust the exhaust hood.",\n"nodes": ["knob", "exhaust hood"],\n"edges": [{\n    "functional_relationship": "adjust",\n    "object1": "knob", "object2": "exhaust hood",\n    "spatial_relations": ["close", "in_front_of"],\n    "is_touching": true\n  }],\n"action_type": "rotate",\n"function_type": "open_close_control"'
+                  },
+                  'item10': {
+                      images: ['figures/kitchen/10/rgb/42445168_8029.148.jpg', 'figures/kitchen/10/rgb/42445169_7886.839.jpg', 'figures/kitchen/10/rgb/42445173_8240.048.jpg', 'figures/kitchen/10/rgb/42445173_8240.648.jpg'],
+                      description: '"task_instruction": "Open the microwave oven.",\n"nodes": ["handle", "microwave oven"],\n"edges": [{\n    "functional_relationship": "open or close",\n    "object1": "handle", "object2": "microwave oven",\n    "spatial_relations": ["in_front_of", "close"],\n    "is_touching": true\n  }],\n"action_type": "pull",\n"function_type": "open_close_control"'
                   }
               },
               'bedroom': {
@@ -2118,6 +2202,26 @@
                   'item5': {
                       images: ['figures/bedroom/5/1.png', 'figures/bedroom/5/2.png', 'figures/bedroom/5/3.png', 'figures/bedroom/5/4.png'],
                       description: '"task_instruction": "Open the door.",\n"nodes": ["handle", "door"],\n"edges": [{\n    "functional_relationship": "open or close",\n    "object1": "handle", "object2": "door",\n    "spatial_relations": ["left_of", "in_front_of", "close"],\n    "is_touching": true\n  }],\n"action_type": "pull",\n"function_type": "open_close_control"'
+                  },
+                  'item6': {
+                      images: ['figures/bedroom/6/rgb/42897547_473168.707.jpg', 'figures/bedroom/6/rgb/42897547_473169.407.jpg', 'figures/bedroom/6/rgb/42897547_473170.006.jpg', 'figures/bedroom/6/rgb/42897547_473170.206.jpg'],
+                      description: '"task_instruction": "Power on the humidifier.",\n"nodes": ["electric outlet", "humidifier"],\n"edges": [{\n    "functional_relationship": "provide power",\n    "object1": "electric outlet", "object2": "humidifier",\n    "spatial_relations": ["lower_than", "left_of"],\n    "is_touching": false\n  }],\n"action_type": "insert",\n"function_type": "power_supply"'
+                  },
+                  'item7': {
+                      images: ['figures/bedroom/7/rgb/42445938_79464.378.jpg', 'figures/bedroom/7/rgb/42445938_79464.578.jpg', 'figures/bedroom/7/rgb/42445938_79464.778.jpg'],
+                      description: '"task_instruction": "Power on the robot vacuum cleaner.",\n"nodes": ["electric outlet", "robot_vacuum_cleaner"],\n"edges": [{\n    "functional_relationship": "provide power",\n    "object1": "electric outlet", "object2": "robot_vacuum_cleaner",\n    "spatial_relations": ["higher_than", "left_of"],\n    "is_touching": false\n  }],\n"action_type": "insert",\n"function_type": "power_supply"'
+                  },
+                  'item8': {
+                      images: ['figures/bedroom/8/rgb/42447320_410302.225.jpg', 'figures/bedroom/8/rgb/42447320_410303.124.jpg', 'figures/bedroom/8/rgb/42447329_410591.706.jpg'],
+                      description: '"task_instruction": "Power on the printer.",\n"nodes": ["outlet", "printer"],\n"edges": [{\n    "functional_relationship": "provide power",\n    "object1": "outlet", "object2": "printer",\n    "spatial_relations": ["lower_than", "left_of"],\n    "is_touching": false\n  }],\n"action_type": "insert",\n"function_type": "power_supply"'
+                  },
+                  'item9': {
+                      images: ['figures/bedroom/9/rgb/42444787_50429.324.jpg', 'figures/bedroom/9/rgb/42444787_50429.624.jpg', 'figures/bedroom/9/rgb/42444787_50430.023.jpg', 'figures/bedroom/9/rgb/42444787_50430.523.jpg'],
+                      description: '"task_instruction": "Open the window.",\n"nodes": ["handle", "window"],\n"edges": [{\n    "functional_relationship": "open or close",\n    "object1": "handle", "object2": "window",\n    "spatial_relations": ["close"],\n    "is_touching": true\n  }],\n"action_type": "rotate",\n"function_type": "open_close_control"'
+                  },
+                  'item10': {
+                      images: ['figures/bedroom/10/rgb/42446579_205785.459.jpg', 'figures/bedroom/10/rgb/42446579_205785.658.jpg', 'figures/bedroom/10/rgb/42446579_205785.858.jpg', 'figures/bedroom/10/rgb/42446579_205785.958.jpg'],
+                      description: '"task_instruction": "Turn on the ceiling light fixture.",\n"nodes": ["switch panel", "ceiling light fixture"],\n"edges": [{\n    "functional_relationship": "control",\n    "object1": "switch panel", "object2": "ceiling light fixture",\n    "spatial_relations": ["lower_than", "right_of", "far"],\n    "is_touching": false\n  }],\n"action_type": "press",\n"function_type": "device_control"'
                   }
               }
           };
@@ -2140,7 +2244,7 @@
               document.getElementById(category + '-thumbnails').style.display = 'flex';
               
               // Update detail view with first item
-              showDetail(category, 'item1');
+              showDetail(category, 'item6');
           }
           
           function showDetail(category, item) {
@@ -2171,7 +2275,7 @@
           // Auto-load bathroom data on page load
           document.addEventListener('DOMContentLoaded', function() {
               console.log('Page loaded, setting up bathroom data');
-              showDetail('living-room', 'item1');
+              showDetail('living-room', 'item6');
           });
           
         </script>

@@ -1,0 +1,38 @@
+{
+  "subgraph_id": "14ccb2a2-d0aa-48e3-a58c-c30b8f41f46f",
+  "scene_id": "422377",
+  "task_instruction": "Power on the printer.",
+  "nodes": [
+    {
+      "label": "outlet",
+      "id": "6b8d73f3-23ef-4a0b-bb77-a7ba53c650a3"
+    },
+    {
+      "label": "printer",
+      "id": "26ccb080-7ed2-4174-8905-6e5369e86cf4"
+    }
+  ],
+  "edges": [
+    {
+      "relation_id": "9efcc74b-ad47-4f15-b627-81fabf274a77",
+      "scene_id": "422377",
+      "functional_relationship": "provide power",
+      "object1": {
+        "label": "outlet",
+        "id": "6b8d73f3-23ef-4a0b-bb77-a7ba53c650a3"
+      },
+      "object2": {
+        "label": "printer",
+        "id": "26ccb080-7ed2-4174-8905-6e5369e86cf4"
+      },
+      "spatial_relations": [
+        "lower_than",
+        "left_of",
+        "behind"
+      ],
+      "is_touching": false
+    }
+  ],
+  "action_type": "insert",
+  "function_type": "power_supply"
+}

@@ -1,0 +1,36 @@
+{
+  "subgraph_id": "5b85a575-0a64-4cdf-b27f-9d9458ee0b11",
+  "scene_id": "421015",
+  "action_type": "rotate",
+  "function_type": "open_close_control",
+  "task_instruction": "Open the window.",
+  "nodes": [
+    {
+      "label": "handle",
+      "id": "5087109c-f263-42f8-b510-a1126a2a6497"
+    },
+    {
+      "label": "window",
+      "id": "5c4d7461-cbf5-4c88-8331-0bcae9b8b6e2"
+    }
+  ],
+  "edges": [
+    {
+      "relation_id": "d2a8f0a1-06f2-4a1b-abd3-eed2e5990ef5",
+      "scene_id": "421015",
+      "functional_relationship": "open or close",
+      "object1": {
+        "label": "handle",
+        "id": "5087109c-f263-42f8-b510-a1126a2a6497"
+      },
+      "object2": {
+        "label": "window",
+        "id": "5c4d7461-cbf5-4c88-8331-0bcae9b8b6e2"
+      },
+      "spatial_relations": [
+        "close"
+      ],
+      "is_touching": true
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "subgraph_id": "eff38554-6017-41f2-9f8b-11f631889863",
+  "scene_id": "422842",
+  "action_type": "insert",
+  "function_type": "power_supply",
+  "task_instruction": "Power on the humidifier.",
+  "nodes": [
+    {
+      "label": "electric outlet",
+      "id": "d8724aea-09ee-486f-8ede-b0c39e64a35e"
+    },
+    {
+      "label": "humidifier",
+      "id": "83ea1342-c447-4286-9067-5acec8841313"
+    }
+  ],
+  "edges": [
+    {
+      "relation_id": "97b8a261-9df0-4e01-9ae7-9bdf2eba00be",
+      "scene_id": "422842",
+      "functional_relationship": "provide power",
+      "object1": {
+        "label": "electric outlet",
+        "id": "d8724aea-09ee-486f-8ede-b0c39e64a35e"
+      },
+      "object2": {
+        "label": "humidifier",
+        "id": "83ea1342-c447-4286-9067-5acec8841313"
+      },
+      "spatial_relations": [
+        "lower_than",
+        "left_of",
+        "behind"
+      ],
+      "is_touching": false
+    }
+  ]
+}

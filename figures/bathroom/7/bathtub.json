@@ -1,0 +1,59 @@
+{
+  "subgraph_id": "29cc7742-5166-4aa1-8134-cc8d77eaf74e",
+  "scene_id": "422006",
+  "task_instruction": "Fill the bathtub.",
+  "nodes": [
+    {
+      "label": "bathtub",
+      "id": "5f519f8e-6135-4a9f-aa45-76e30afa1fa5"
+    },
+    {
+      "label": "faucet / handle",
+      "id": "3811808c-a212-4d1d-accd-b10b346ca9a3"
+    },
+    {
+      "label": "button",
+      "id": "cdaa8f5b-6aac-431c-a619-c33fc253a7f4"
+    }
+  ],
+  "edges": [
+    {
+      "relation_id": "47b55601-2490-4d7f-8ea3-76073bb0c5cb",
+      "scene_id": "422006",
+      "functional_relationship": "control",
+      "object1": {
+        "label": "faucet / handle",
+        "id": "3811808c-a212-4d1d-accd-b10b346ca9a3"
+      },
+      "object2": {
+        "label": "bathtub",
+        "id": "5f519f8e-6135-4a9f-aa45-76e30afa1fa5"
+      },
+      "spatial_relations": [
+        "higher_than",
+        "right_of"
+      ],
+      "is_touching": true
+    },
+    {
+      "relation_id": "bb34b406-57f6-4bda-be3a-060fd37d2ab3",
+      "scene_id": "422006",
+      "functional_relationship": "control",
+      "object1": {
+        "label": "button",
+        "id": "cdaa8f5b-6aac-431c-a619-c33fc253a7f4"
+      },
+      "object2": {
+        "label": "bathtub",
+        "id": "5f519f8e-6135-4a9f-aa45-76e30afa1fa5"
+      },
+      "spatial_relations": [
+        "lower_than",
+        "right_of"
+      ],
+      "is_touching": true
+    }
+  ],
+  "action_type": "open",
+  "function_type": "water_flow_control"
+}

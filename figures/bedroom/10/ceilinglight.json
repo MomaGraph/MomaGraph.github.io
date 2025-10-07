@@ -1,0 +1,38 @@
+{
+  "subgraph_id": "4ef4c62e-5fab-473c-98ad-6e06aa97c9f2",
+  "scene_id": "422356",
+  "action_type": "press",
+  "function_type": "device_control",
+  "task_instruction": "Turn on the ceiling light fixture.",
+  "nodes": [
+    {
+      "label": "switch panel",
+      "id": "e7f9b947-3b09-48dc-8a5e-280d8c2b4430"
+    },
+    {
+      "label": "ceiling light fixture",
+      "id": "c6533fe6-7920-4487-8eb9-7b605d430a8a"
+    }
+  ],
+  "edges": [
+    {
+      "relation_id": "5602dc95-08d2-4ea5-bd97-82f6e40df507",
+      "scene_id": "422356",
+      "functional_relationship": "control",
+      "object1": {
+        "label": "switch panel",
+        "id": "e7f9b947-3b09-48dc-8a5e-280d8c2b4430"
+      },
+      "object2": {
+        "label": "ceiling light fixture",
+        "id": "c6533fe6-7920-4487-8eb9-7b605d430a8a"
+      },
+      "spatial_relations": [
+        "lower_than",
+        "right_of",
+        "far"
+      ],
+      "is_touching": false
+    }
+  ]
+}

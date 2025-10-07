@@ -1,0 +1,38 @@
+{
+  "subgraph_id": "922361eb-700b-49d9-a621-bf4a6ec1bf60",
+  "scene_id": "421853",
+  "action_type": "press",
+  "function_type": "open_close_control",
+  "task_instruction": "Open the trashcan.",
+  "nodes": [
+    {
+      "label": "handle",
+      "id": "31f5f91d-0a7c-4724-b682-3938230c2f1e"
+    },
+    {
+      "label": "trashcan",
+      "id": "0b053e44-a9e6-4c7a-a018-6b6a0c518bae"
+    }
+  ],
+  "edges": [
+    {
+      "relation_id": "102943a6-e31e-43fb-8c08-4be2411371a8",
+      "scene_id": "421853",
+      "functional_relationship": "open or close",
+      "object1": {
+        "label": "handle",
+        "id": "31f5f91d-0a7c-4724-b682-3938230c2f1e"
+      },
+      "object2": {
+        "label": "trashcan",
+        "id": "0b053e44-a9e6-4c7a-a018-6b6a0c518bae"
+      },
+      "spatial_relations": [
+        "lower_than",
+        "in_front_of",
+        "close"
+      ],
+      "is_touching": true
+    }
+  ]
+}

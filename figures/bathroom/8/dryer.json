@@ -1,0 +1,37 @@
+{
+  "subgraph_id": "8cd1b14e-8c97-4b55-8e00-a697884bb188",
+  "scene_id": "421061",
+  "action_type": "insert",
+  "function_type": "power_supply",
+  "task_instruction": "Power on the dryer.",
+  "nodes": [
+    {
+      "label": "electric outlet",
+      "id": "a083c2eb-3824-4fe6-8b35-138201cd5eac"
+    },
+    {
+      "label": "dryer",
+      "id": "6805b26e-6853-4cf7-abd4-4b525f057e2c"
+    }
+  ],
+  "edges": [
+    {
+      "relation_id": "4b1661f2-2577-4e5d-8d37-34506d495f4a",
+      "scene_id": "421061",
+      "functional_relationship": "provide power",
+      "object1": {
+        "label": "electric outlet",
+        "id": "a083c2eb-3824-4fe6-8b35-138201cd5eac"
+      },
+      "object2": {
+        "label": "dryer",
+        "id": "6805b26e-6853-4cf7-abd4-4b525f057e2c"
+      },
+      "spatial_relations": [
+        "lower_than",
+        "left_of"
+      ],
+      "is_touching": false
+    }
+  ]
+}

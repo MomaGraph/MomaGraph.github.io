@@ -1,0 +1,37 @@
+{
+  "subgraph_id": "81247d5d-960c-49db-84e0-f3a74fbeea17",
+  "scene_id": "421002",
+  "task_instruction": "Power on the christmas tree lights.",
+  "nodes": [
+    {
+      "label": "outlet",
+      "id": "9e9d1179-2988-4ccd-bc37-91720f7d8700"
+    },
+    {
+      "label": "christmas tree lights",
+      "id": "230f117b-aa4b-4ada-9f95-86bac7eb7d2f"
+    }
+  ],
+  "edges": [
+    {
+      "relation_id": "7b284a3d-9798-41a6-8289-0309c2b981bf",
+      "scene_id": "421002",
+      "functional_relationship": "provide power",
+      "object1": {
+        "label": "outlet",
+        "id": "9e9d1179-2988-4ccd-bc37-91720f7d8700"
+      },
+      "object2": {
+        "label": "christmas tree lights",
+        "id": "230f117b-aa4b-4ada-9f95-86bac7eb7d2f"
+      },
+      "spatial_relations": [
+        "lower_than",
+        "right_of"
+      ],
+      "is_touching": false
+    }
+  ],
+  "action_type": "insert",
+  "function_type": "power_supply"
+}

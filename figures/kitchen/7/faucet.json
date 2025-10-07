@@ -1,0 +1,59 @@
+{
+  "subgraph_id": "34b39389-8867-4d07-bf9a-8d1263ed63e2",
+  "scene_id": "421069",
+  "task_instruction": "Control water flow of the kitchen sink.",
+  "nodes": [
+    {
+      "label": "faucet / handle",
+      "id": "24e5db2d-fad1-4a17-a275-03b2c04faf2e"
+    },
+    {
+      "label": "button / knob",
+      "id": "05138261-896e-45b4-929e-168bb1bb7ac2"
+    },
+    {
+      "label": "kitchen sink",
+      "id": "d55c2a1b-a0fa-4aef-84d7-d77064baeaf0"
+    }
+  ],
+  "edges": [
+    {
+      "relation_id": "75a3fd66-5525-476b-bc7a-ce61f29d6e9c",
+      "scene_id": "421069",
+      "functional_relationship": "control",
+      "object1": {
+        "label": "faucet / handle",
+        "id": "24e5db2d-fad1-4a17-a275-03b2c04faf2e"
+      },
+      "object2": {
+        "label": "kitchen sink",
+        "id": "d55c2a1b-a0fa-4aef-84d7-d77064baeaf0"
+      },
+      "spatial_relations": [
+        "higher_than",
+        "close"
+      ],
+      "is_touching": true
+    },
+    {
+      "relation_id": "f08041dc-4e65-428f-8e20-51f9afaf3bb8",
+      "scene_id": "421069",
+      "functional_relationship": "control",
+      "object1": {
+        "label": "button / knob",
+        "id": "05138261-896e-45b4-929e-168bb1bb7ac2"
+      },
+      "object2": {
+        "label": "kitchen sink",
+        "id": "d55c2a1b-a0fa-4aef-84d7-d77064baeaf0"
+      },
+      "spatial_relations": [
+        "close",
+        "lower_than"
+      ],
+      "is_touching": true
+    }
+  ],
+  "action_type": "press",
+  "function_type": "water_flow_control"
+}

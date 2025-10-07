@@ -1,0 +1,37 @@
+{
+  "subgraph_id": "05d9b410-3f32-46f0-924b-d16e4fabd9ba",
+  "scene_id": "420693",
+  "action_type": "pull",
+  "function_type": "open_close_control",
+  "task_instruction": "Open the tv stand's drawer.",
+  "nodes": [
+    {
+      "label": "tv stand",
+      "id": "8636bd0f-ae66-481b-844f-f5ffe4b58dd2"
+    },
+    {
+      "label": "handle",
+      "id": "d97486ef-df31-4676-8848-433e207db093"
+    }
+  ],
+  "edges": [
+    {
+      "relation_id": "8bf38919-702d-48a1-b70e-0fd75a3b85f9",
+      "scene_id": "420693",
+      "functional_relationship": "open or close",
+      "object1": {
+        "label": "handle",
+        "id": "d97486ef-df31-4676-8848-433e207db093"
+      },
+      "object2": {
+        "label": "tv stand",
+        "id": "8636bd0f-ae66-481b-844f-f5ffe4b58dd2"
+      },
+      "spatial_relations": [
+        "close",
+        "in_front_of"
+      ],
+      "is_touching": true
+    }
+  ]
+}

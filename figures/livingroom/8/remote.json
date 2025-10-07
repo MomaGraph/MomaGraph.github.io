@@ -1,0 +1,38 @@
+{
+  "subgraph_id": "75d61902-97fd-40b0-b3ae-584b554de35d",
+  "scene_id": "422356",
+  "action_type": "press",
+  "function_type": "device_control",
+  "task_instruction": "Turn on the television.",
+  "nodes": [
+    {
+      "label": "remote control",
+      "id": "cd10d65f-3d6a-4a39-8fd2-0c7e8fa57c9f"
+    },
+    {
+      "label": "tv",
+      "id": "55928cc9-7c11-4231-a561-1f4a70723ead"
+    }
+  ],
+  "edges": [
+    {
+      "relation_id": "17df0602-67b1-4591-8f18-b3da3db4aea6",
+      "scene_id": "422356",
+      "functional_relationship": "control",
+      "object1": {
+        "label": "remote control",
+        "id": "cd10d65f-3d6a-4a39-8fd2-0c7e8fa57c9f"
+      },
+      "object2": {
+        "label": "tv",
+        "id": "55928cc9-7c11-4231-a561-1f4a70723ead"
+      },
+      "spatial_relations": [
+        "lower_than",
+        "in_front_of",
+        "left_of"
+      ],
+      "is_touching": false
+    }
+  ]
+}
